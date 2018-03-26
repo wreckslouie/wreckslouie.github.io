@@ -1,0 +1,56 @@
+.row {
+    clear: both;
+    &:after {
+        clear: both;
+        float: none;
+        display: block;
+        content: " ";
+    }
+    &.flex {
+        @media only screen and (min-width: 993px) {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+.col {
+    display: block;
+    float: left;
+    position: relative;
+    &-1 {
+        width: 100%;
+    }
+
+    @media only screen and (min-width: 993px) {
+        &-2 {
+            width: 50%;
+        }
+        &-3 {
+            width: 33.33333%;
+        }
+        .flex & {
+            flex-grow: 1;
+        }
+    }
+
+    @media (max-width: 993px) {
+        &.col-md-6 {
+            width: 50%;
+        }
+    }
+    &-4 {
+        width: 25%;
+    }
+    &-three-fourth{
+        width: 75%;
+    }
+}
+
+
+@media only screen and (max-width: 640px) {
+    .col-md-1 {
+        width: 100%;
+    }
+}

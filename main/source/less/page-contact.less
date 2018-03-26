@@ -1,0 +1,193 @@
+.show-tablet {
+    display: none;
+
+    @media (max-width: 993px) {
+        display: block;
+    }
+}
+.hide-tablet {
+    @media (max-width: 993px) {
+        display: none;
+    }
+}
+.contact-wrap {
+    .map {
+        height: 100vh;
+
+        @media (max-width: 993px) {
+            width: 100%;
+            height: 400px;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+            height: 400px;
+        }
+    }
+    .details {
+        height: 100vh;
+        overflow: hidden;
+        @media (max-height: 993px) {
+            height: auto;
+            overflow: auto;
+        }
+        @media (max-height: 768px) {
+            overflow: auto;
+        }
+    }
+    .email-hidden {
+        padding: 20px 0 0;
+        p {
+            color: @gray-lighter;
+            margin-bottom: 20px;
+            font-size: @small;
+        }
+    }
+    .btn {
+        padding: 10px;
+        // color: @gray-darker;
+    }
+    @media (max-width: 993px) {
+        .btn {
+            // padding-left: 0;
+            // padding-right: 0;
+            width: 280px;
+            text-align: center;
+            // color: @gray-darker;
+            // border: 1px solid @gray-lighter;
+        }
+    }
+    @media (max-width: 680px) {
+        .btn {
+            margin: 0;
+        }
+    }
+    @media (max-width: 480px) {
+        .btn {
+            width: ~"calc(100% - 20px)";
+            display: block;
+        }
+    }
+}
+
+.customMap {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.contact-content {
+    font-family: @font-serif;
+    padding-bottom: 20px !important;
+    min-height: ~"calc(100vh - 200px)";
+
+    h1 {
+        font-family: @font-sans-serif;
+        font-weight: 200;
+        @media (max-width: 768px) {
+            margin-bottom: 30px !important;
+        }
+    }
+
+    .map-switch {
+        margin-top: 70px;
+        position: relative;
+        .tel {
+            color: @gray-font;
+        }
+        .col {
+            border-top: 1px solid @gray-font;
+            border-bottom: 1px solid @gray-font;
+            padding: 20px 0 30px;
+            position: relative;
+            cursor: pointer;
+
+            &:before {
+                content: " ";
+                display: block;
+                top: 0;
+                width: 0;
+                transition: all 0.5s ease;
+            }
+
+            @media (max-width: 993px) {
+                width: 100% !important;
+            }
+
+            @media (max-width: 768px) {
+                width: 100% !important;
+            }
+        }
+        h4 {
+            color: @gold;
+            font-size: @sub;
+            font-family: @font-sans-serif;
+            font-weight: 200;
+        }
+        p {
+            font-size: @p;
+        }
+        .active:before {
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            top: 0;
+            background: @gold;
+        }
+        .btn {
+            margin-top: 30px;
+        }
+        @media (min-width: 994px) and (max-width: 1100px){
+            display: block;
+            .col {
+                width: 100%;
+            }
+        }
+        @media (max-width: 993px) {
+            margin-top: 30px;
+        }
+
+    }
+    .contact-email {
+        h5 {
+            display: inline-block;
+            margin-right: 20px;
+            color: @gold;
+            font-family: @font-sans-serif;
+            margin: 15px 0 20px;
+            font-weight: 200;
+        }
+    }
+    @media (min-width: 769px) and (max-width: 993px) {
+        border-left: 1px solid @gray-dark;
+    }
+    @media (max-width: 768px) {
+        padding: 50px !important;
+    }
+}
+
+a {
+    [href^="http://maps.google.com/maps"],
+    [href^="https://maps.google.com/maps"] {
+        display: none !important;
+    }
+}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
+.contact {
+    &.social-footer {
+        @media (max-width: 993px) {
+            padding: 0 80px 30px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            padding: 0 40px 30px;
+            margin-bottom: 50px;
+        }
+    }
+}

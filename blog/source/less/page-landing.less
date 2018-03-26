@@ -1,0 +1,328 @@
+.show-xs {
+    display: none;
+    @media (max-width: 320px) {
+        display: block;
+    }
+}
+.scrollable-main {
+        // background: url("@{path-images}/landing-bg.jpg") no-repeat;
+        background-size: cover;
+        opacity: 0;
+}
+.container-scroller {
+    height: 100vh;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    .scrolled {
+        height: 800vh;
+        width: 100vw;
+        display: block;
+    }
+}
+.fixed-element{
+    position: fixed;
+    margin: auto;
+    transition: opacity 3s ease, transform 0.7s ease;
+    opacity: 0;
+    top: -9999px;
+    visibility: hidden;
+    height: 100vh;
+    width: ~"calc(100vw - 60px)";
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    .align-center {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        height: 144px;
+        width: 750px;
+        position: absolute;
+        z-index: 20;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    h1 {
+        font-size: @large;
+        font-family: @font-sans-serif;
+        transform: translate(0, 50px);
+        transition: opacity 0s ease, transform 0.5s ease;
+        position: relative;
+        opacity: 0;
+        @media (max-width: 768px) {
+            font-size: @sub-large;
+        }
+        @media (max-width: 400px) {
+            font-size: @sub;
+        }
+    }
+
+    .fp-viewing-0 &{
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 0px);
+        top: 0;
+
+        h1 {
+            transform: translate(0, 0px);
+            opacity: 1;
+        }
+    }
+
+    .img-fixed-1 {
+        // background: url("@{path-images}/zoom-1.png") no-repeat;
+        background-repeat: no-repeat !important;
+        height: 100vh;
+        width: ~"calc(100vh - 60px)";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 9;
+        width: 100%;
+        background-size: contain !important;
+        background-position: bottom !important;
+        // transition: all 0.5s ease;
+    }
+    .img-fixed-2 {
+        // background: url("@{path-images}/zoom-2.png") no-repeat;
+        background-repeat: no-repeat !important;
+        height: 100vh;
+        width: ~"calc(100vh - 60px)";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 8;
+        width: 100%;
+        background-size: contain !important;
+        background-position: bottom !important;
+        // transition: all 0.5s ease;
+    }
+    .img-fixed-3 {
+        // background: url("@{path-images}/zoom-3.png") no-repeat;
+        background-repeat: no-repeat !important;
+        height: 100vh;
+        width: ~"calc(100vh - 60px)";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 7;
+        width: 100%;
+        background-size: 75vh !important;
+        background-position: bottom !important;
+        // transition: all 0.5s ease;
+    }
+    .img-fixed-4 {
+        // background: url("@{path-images}/zoom-bg.png") no-repeat;
+        background-repeat: no-repeat !important;
+        height: 100vh;
+        width: ~"calc(100vh - 60px)";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 5;
+        width: 100%;
+        background-size: cover !important;
+        background-position: top !important;
+        // transition: all 0.5s ease;
+
+        @media only screen and (orientation:portrait) and (min-width: 993px) {
+            background-size: cover !important;
+            background-position: top !important;
+        }
+    }
+
+    .img-fixed {
+        &-1, &-2, &-3, &-4{
+            opacity: 1;
+            transition: opacity 2s 1s ease, transform 1.5s ease;
+            // transition-delay: 0.5s;
+            &.fade-bg {
+                @media (min-width: 993px){
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    &.remove-fix{
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        height: 100vh;
+
+        h1 {
+            opacity: 1;
+        }
+
+        .img-fixed {
+            &-1, &-2, &-3, &-4{
+                height: 100vh;
+            }
+            &-3{
+                background-size: 600px !important;
+
+                @media (max-width: 480px) {
+                    background-size: 80vh !important;
+                }
+            }
+        }
+        @media (max-width: 768px) {
+            height: ~"calc(100vh - 60px)";
+        }
+        @media (max-height: 768px) {
+            // height: 500px;
+        }
+    }
+    @media (max-width: 900px) {
+        overflow: hidden;
+        width: ~"calc(100vw - 60px)";
+    }
+    @media (max-width: 768px) {
+        overflow: hidden;
+        width: 100vw;
+    }
+}
+
+.iScrollVerticalScrollbar{
+    opacity: 0;
+}
+.remove-first {
+    .scrollable-main {
+        display: none;
+    }
+    .slide {
+        .table-cell {
+            padding: 80px 0;
+        }
+    }
+
+    .table-container, .section-full {
+        min-height: 100vh;
+        height: auto;
+        @media (max-width: 768px) {
+            min-height: 1px;
+        }
+    }
+
+    .margin-top-25vh  {
+        margin-top: 100px;
+    }
+
+    .table-container .table-cell .content-bottom {
+        height: 700px;
+    }
+}
+.section-inner {
+    background-size: cover !important;
+    &-main {
+        // position: fixed;
+        height: 170vh;
+        h1 {
+            font-size: @large;
+            font-family: @font-sans-serif;
+        }
+        @media (max-width: 1120px) {
+            height: 100vh;
+        }
+    }
+    &.home-screen-2 {
+        .read-more {
+            color: @gray;
+            text-transform: uppercase;
+            font-size: @sub;
+            font-family: @font-sans-serif;
+            margin: 80px 0 40px;
+            font-weight: 200;
+        }
+        p {
+            font-family: @font-sans-serif;
+        }
+        .read-links {
+            a {
+                width: 165px;
+                display: inline-block;
+                margin: 0 70px;
+                font-size: @small;
+                font-family: @font-serif;
+                text-transform: uppercase;
+                text-decoration: none;
+                border-bottom: 1px solid @gray-dark;
+                letter-spacing: 1px;
+                padding: 15px 0;
+                @media (max-width: 800px) {
+                    width: ~"calc(39% - 30px)";
+                    margin: 0 15px;
+                }
+                @media (max-width: 480px) {
+                    width: 100%;
+                    margin: 0 0 10px;
+                    // border: 1px solid @gray-dark;
+                    text-align: left;
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            .align-center{
+                text-align: left;
+            }
+        }
+    }
+    &-c {
+        background-size: cover !important;
+        position: relative;
+        .table-cell {
+            z-index: 10;
+        }
+        &:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            content: " ";
+            z-index: 2;
+            .gradient(transparent, #000);
+        }
+    }
+    &.vision{
+        background: url("@{path-images}/emergence.jpg") no-repeat;
+        background-size: cover;
+    }
+}
+
+.wrapper {
+    &-b {
+        background: #f1c40f;
+    }
+
+    &-c {
+        background: #9b59b6;
+    }
+}
+

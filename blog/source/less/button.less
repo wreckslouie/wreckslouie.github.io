@@ -1,0 +1,47 @@
+.btn {
+    padding: 15px 60px;
+    border: 2px solid #000;
+    text-transform: uppercase;
+    font-size: @strong;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: @font-serif;
+    transition: all 0.5s ease;
+    color: @gray-btn;
+    &:hover{
+        cursor: pointer;
+        background: @gold !important;
+        color: #fff !important;
+        border-color: @gold !important;
+    }
+    &-white {
+        color: @gray-btn;
+        border-color: @gray-btn;
+    }
+    &-gray {
+        color: @gray-btn;
+        border-color: @gray-btn;
+    }
+
+    &-wrap {
+        margin-top: 30px;
+    }
+    &-small {
+        padding: 10px 40px;
+        font-size: @small;
+        font-family: @font-serif;
+    }
+
+    &-mini {
+        padding: 8px 30px;
+        font-size: @smaller;
+        border-color: @gray-btn;
+        color: @gray-font;
+    }
+
+    @media (max-width: 680px) {
+        // display: block;
+        margin: auto;
+    }
+}

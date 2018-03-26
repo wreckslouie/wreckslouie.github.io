@@ -1,0 +1,124 @@
+.form-group{
+    font-family: @font-serif;
+    padding: 10px 0;
+    color: @gray-font;
+    margin-bottom: 15px;
+    label{
+        margin-bottom: 10px;
+    }
+    input, select {
+        border: none;
+        box-shadow: none;
+        border-bottom: 1px solid @gray-font;
+        color: @gray-font;
+        font-size: @p;
+        display: block;
+        width: 400px;
+        background: none;
+        padding: 10px;
+        border-radius: 0 !important;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-bottom: none;
+        width: 420px;
+    }
+    .select-wrap {
+        position: relative;
+        width: 420px;
+        &:before {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid @gray-darker;
+            position: absolute;
+            content: " ";
+            display: block;
+            right: 10px;
+            top: 17px;
+        }
+        &:after {
+            content: " ";
+            display: block;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background: @gray-font;
+        }
+    }
+
+    &.boxed{
+        input {
+            border: 1px solid;
+            display: inline-block;
+            height: 20px;
+            width: ~"calc(70% - 150px)";
+        }
+        .btn {
+            font-size: @small;
+            padding: 12px 30px 11px;
+            color: #fff;
+            border: 1px solid @gray-dark;
+            background: @gray-dark;
+            margin-left: -2px;
+            vertical-align: top;
+        }
+        @media (max-width: 993px) {
+            text-align: left !important;
+            input {
+                width: ~"calc(90% - 150px)";
+                height: 19px;
+            }
+            .btn {
+                height: 42px;
+                top: 1px;
+                margin-left: -2px;
+                position: relative;
+            }
+        }
+        @media (max-width: 768px) {
+            input {
+                width: ~"calc(90% - 150px)";
+                height: 19px;
+            }
+            .btn {
+                height: 41px;
+            }
+        }
+        @media (max-width: 680px) {
+            input {
+                float: left;
+            }
+            .btn {
+                margin: 0;
+                float: left;
+            }
+        }
+        @media (max-width: 480px) {
+            input {
+                width: ~"calc(90% - 85px)";
+            }
+            .btn {
+                font-size: 12px;
+                padding: 12px 5px 13px;
+            }
+        }
+    }
+}
+
+
+::-webkit-input-placeholder {
+  color: @gray-font;
+}
+::-moz-placeholder {
+  color: @gray-font;
+}
+:-ms-input-placeholder {
+  color: @gray-font;
+}
+:-moz-placeholder {
+  color: @gray-font;
+}
