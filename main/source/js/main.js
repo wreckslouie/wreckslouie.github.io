@@ -20,15 +20,16 @@ $app = {
     },
     owlWorkInner: {
       init: function () {
-        $('.inner-carousel').owlCarousel({
+
+        var owl = $('.inner-owl');
+        owl.owlCarousel({
             loop:false,
             margin:0,
+            scrollPerPage : true,
             nav:true,
-            responsive:{
-                0:{
-                    items:1
-                }
-            }
+            items: 1,
+            singleItem:true,
+            merge: true
         })
       }
     },
@@ -78,6 +79,22 @@ $app = {
           else if ( $(window).outerWidth() <= 768 ) {
             bg = bg.replace('img', 'img/sm');
             $(this).css('background', 'url('+bg+')');
+          }
+          // else if ( $(window).outerWidth() <= 993)
+          //   bg = bg.replace('img', 'img/xs');
+          //   $(this).css('background', 'url('+bg+')');
+          // }
+        });
+
+        $('.inner-owl .item img').each(function(){
+          var bg = $(this).attr('data-bg');
+          if ( $(window).outerWidth() <= 993 && $(window).outerWidth() >= 769) {
+            bg = bg.replace('img', 'img/md');
+            $(this).attr('src', bg);
+          }
+          else if ( $(window).outerWidth() <= 768 ) {
+            bg = bg.replace('img', 'img/md');
+            $(this).attr('src', bg);
           }
           // else if ( $(window).outerWidth() <= 993)
           //   bg = bg.replace('img', 'img/xs');
