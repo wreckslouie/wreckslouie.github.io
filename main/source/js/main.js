@@ -19,8 +19,10 @@ $app = {
     },
     workInnerPadding: {
       init: function(){
-        var navHeight = $('.works-nav ').height() + 30;
-        $('.work-details .padding-80').css('padding-bottom', navHeight);
+        if ( $(window).outerWidth() > 993) {
+          var navHeight = $('.works-nav ').height() + 30;
+          $('.work-details .padding-80').css('padding-bottom', navHeight);
+        }
       }
     },
     fullpageScrollTo: {
