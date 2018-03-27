@@ -16,6 +16,21 @@ $app = {
         this.scrollTo.init();
         this.fullpageScrollTo.init();
         this.workInnerPadding.init();
+        this.owlWorkInner.init();
+    },
+    owlWorkInner: {
+      init: function () {
+        $('.inner-carousel').owlCarousel({
+            loop:false,
+            margin:0,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                }
+            }
+        })
+      }
     },
     workInnerPadding: {
       init: function(){
