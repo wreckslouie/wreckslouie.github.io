@@ -657,12 +657,13 @@ $app = {
       init: function(){
           $('[role-block=accordion]').each(function(){
             $(this).click( function(){
-              if(!$(this).parent().hasClass('active')){
-                $('.accordion-content').slideUp('slow');
-              }
-              $('.accordion').removeClass('active');
-              $(this).parent().toggleClass('active');
-              $(this).next().slideDown('slow');
+              // if(!$(this).parent().hasClass('active')){
+              //   $('.accordion-content').slideUp('slow');
+
+              // }
+              $('.accordion').toggleClass('active');
+              // $(this).parent().toggleClass('active');
+              $('[role-block=accordion]').next().slideToggle('slow');
             });
           })
       }

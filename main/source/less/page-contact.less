@@ -30,6 +30,7 @@
         @media (max-height: 993px) {
             height: auto;
             overflow: auto;
+            width: 100%;
         }
         @media (max-height: 768px) {
             overflow: auto;
@@ -55,6 +56,9 @@
             text-align: center;
             // color: @gray-darker;
             // border: 1px solid @gray-lighter;
+        }
+        .appt {
+            display: none;
         }
     }
     @media (max-width: 680px) {
@@ -95,8 +99,8 @@
             color: @gray-font;
         }
         .col {
-            border-top: 1px solid @gray-font;
-            border-bottom: 1px solid @gray-font;
+            border-top: 1px solid @gray-border;
+            border-bottom: 1px solid @gray-border;
             padding: 20px 0 30px;
             position: relative;
             cursor: pointer;
@@ -110,7 +114,7 @@
             }
 
             @media (max-width: 993px) {
-                width: 100% !important;
+                width: 50% !important;
             }
 
             @media (max-width: 768px) {
@@ -132,6 +136,9 @@
             width: 100%;
             top: 0;
             background: @gold;
+            @media (max-width: 993px) {
+                width: 0;
+            }
         }
         .btn {
             margin-top: 30px;
@@ -144,6 +151,10 @@
         }
         @media (max-width: 993px) {
             margin-top: 30px;
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            display: block;
         }
 
     }
