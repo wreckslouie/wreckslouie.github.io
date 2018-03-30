@@ -27,12 +27,12 @@
     .details {
         height: 100vh;
         overflow: hidden;
-        @media (max-height: 993px) {
+        @media (max-width: 993px) {
             height: auto;
             overflow: auto;
             width: 100%;
         }
-        @media (max-height: 768px) {
+        @media (max-width: 768px) {
             overflow: auto;
         }
     }
@@ -192,13 +192,20 @@ a {
 
 .contact {
     &.social-footer {
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
         @media (max-width: 993px) {
-            padding: 0 80px 30px;
-            margin-bottom: 20px;
+            padding: 0 80px 50px;
+            // margin-bottom: 20px;
+            border-left: 1px solid @gray-dark;
         }
         @media (max-width: 768px) {
-            padding: 0 40px 30px;
-            margin-bottom: 50px;
+            padding: 0 40px 50px;
+            // margin-bottom: 50px;
+            border-left: 0px solid transparent;
         }
     }
 }
