@@ -44,7 +44,7 @@ $app = {
     fullpageScrollTo: {
       init: function() {
 
-        if ( $(window).outerWidth() > 1024) {
+        if (( $(window).outerWidth() > 1024) || ($(window).outerHeight() > 768)) {
           $('.scroll-fullpage-inner img').click(function(){
               var scrollable = $('.fp-section').find('.fp-scrollable').data('iscrollInstance'),
                   value = $('.subscribe-footer');
