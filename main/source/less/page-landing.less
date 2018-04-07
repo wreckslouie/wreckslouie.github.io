@@ -358,3 +358,42 @@
     }
 }
 
+.about-back {
+    font-family: @font-sans-serif;
+    color: @gray-dark;
+    font-size: @sub;
+    position: absolute;
+    top: 20px;
+    margin-left: 20px;
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    .about-back-img {
+        vertical-align: middle;
+        display: inline-block;
+        width: 43px;
+        height: 32px;
+        overflow: hidden;
+        img {
+            position: relative;
+            width: 43px;
+            top: 0;
+            transition: top .5s ease;
+        }
+    }
+    &:hover {
+        color: @gold;
+        .about-back-img {
+            img {
+                top: -32px;
+            }
+        }
+    }
+     @media (max-width: 768px) {
+        top: auto;
+        margin-top: 10px;
+        font-size: @strong;
+     }
+}
