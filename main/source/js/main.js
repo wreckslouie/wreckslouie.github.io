@@ -139,7 +139,6 @@ $app = {
                 target.css('background', 'url('+image_url+')');
                 target.removeClass('fade-bg');
               });
-
             }
           });
       }
