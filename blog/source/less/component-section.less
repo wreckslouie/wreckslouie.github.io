@@ -1,12 +1,30 @@
+#fullpage {
+    section {
+        &:after {
+            display: block;
+            content: " ";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.15);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
 .section-full {
     height: 100vh;
     width: 100%;
+    // overflow-x: hidden;
 }
 
 .table-container {
     display: table;
     height: 100vh;
-    width: 100%;
+    width: ~"calc(100%  + 0px)";
+    // overflow: hidden;
     .table-cell {
         display: table-cell;
         vertical-align: middle;

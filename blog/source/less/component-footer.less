@@ -27,12 +27,19 @@
         }
     }
 }
+@media (max-width: 640px) {
+    .footer-separator {
+        display: block;
+        height: 0;
+        opacity: 0;
+    }
+}
 .landing-footer {
     &.footer {
         @media (max-width: 640px) {
             .copy {
                 font-size: @p;
-                text-align: center;
+                text-align: left;
                 span{
                     display: block;
                     opacity: 0;
@@ -40,7 +47,7 @@
                 }
             }
             .social-media {
-                text-align: center;
+                text-align: left;
                 margin-top: 10px;
             }
         }

@@ -1,3 +1,12 @@
+#fullpage {
+    @media (max-width: 993px) {
+        overflow-x: hidden;
+    }
+}
+.fp-scrollable{
+    z-index: 9999;
+
+}
 .fp-enabled body {
         margin-left: 60px !important;
 }
@@ -38,6 +47,17 @@
         height: 100vh;
     }
 }
+.work-wrap {
+    &.owl-carousel .owl-nav button.owl-next,
+    &.owl-carousel .owl-nav button.owl-prev {
+        // padding: 20px 15px !important;
+        // border-radius: 0 !important;
+        @media (max-width: 993px) {
+            // padding: 10px !important;
+        }
+    }
+}
+
 .owl-nav {
     display: block;
     position: absolute;
@@ -56,23 +76,58 @@
         z-index: 999;
         top: -18px;
         margin: 0 !important;
-        padding: 0 10px !important;
-
-        img{
-            width: 24px;
+        // border: 2px solid #fff  !important;
+        background:transparent;
+        transition: border 0.5s ease, background 0.5s ease;
+        &.disabled {
+            &:hover {
+            }
         }
     }
 
     .owl-prev{
         left: 0;
-        padding-right: 0 !important;
+        // padding-right: 0 !important;
+        div {
+            &.more-txt {
+                text-align: right;
+                left: -39px;
+            }
+        }
+        &:hover {
+            div {
+                &.more-txt {
+                    padding: 11px 25px 11px 30px;
+                }
+            }
+        }
     }
     .owl-next{
         right: 0;
         padding-left: 0 !important;
+        div {
+            &.more-txt {
+                text-align: left;
+                right: -39px;
+            }
+        }
+        &:hover {
+            div {
+                &.more-txt {
+                    padding: 11px 30px 11px 25px;
+                }
+            }
+        }
     }
     @media (min-width: 769px) {
-        display: none;
+        // display: none;
+        .owl-prev{
+            left: 20px;
+            // padding-right: 0 !important;
+        }
+        .owl-next{
+            right: 20px;
+        }
     }
 
     .ie &, .edge & {

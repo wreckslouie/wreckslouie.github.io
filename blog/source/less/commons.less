@@ -232,6 +232,18 @@ p {
     font-weight: 200;
 }
 // Inner Container
+.container-tablet {
+    width: 993px;
+    margin: 0 auto;
+
+    @media (max-width: 1020px) {
+        width: 80%;
+    }
+    @media (max-width: 800px) {
+        // text-align: justify;
+        width: 70%;
+    }
+}
 .container-compressed {
     width: @container-compressed;
     margin: 0 auto;
@@ -264,6 +276,7 @@ h1 {
 }
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
+    font-weight: 500;
 }
 
 small {
@@ -287,8 +300,18 @@ small {
 .margin-bottom-150 {
     margin-bottom: 150px;
 }
+.margin-top-10vh {
+    margin-top: 10vh;
+}
 .margin-top-25vh {
     margin-top: 25vh;
+}
+.hide-break-xs {
+    br {
+        @media (max-width: 680px) {
+            display: none;
+        }
+    }
 }
 .padding-80 {
     padding: 80px;
@@ -311,6 +334,11 @@ small {
         padding: 0px 50px;
     }
 }
+.padding-sm-bottom-0 {
+    @media (max-width: 768px) {
+        padding-bottom: 0px !important;
+    }
+}
 .padding-100 {
     padding: 100px;
 
@@ -329,6 +357,9 @@ small {
 }
 .padding-bottom-50 {
     padding-bottom: 50px;
+}
+.padding-bottom-30 {
+    padding-bottom: 30px;
 }
 .no-margin {
     margin: 0 !important;
@@ -350,10 +381,10 @@ small {
 
 // bordered content
 .bordered-bottom {
-    border-bottom: 1px solid @gray-font;
+    border-bottom: 1px solid @gray-border;
 }
 .bordered-top {
-    border-top: 1px solid @gray-font;
+    border-top: 1px solid @gray-border;
 }
 
 
